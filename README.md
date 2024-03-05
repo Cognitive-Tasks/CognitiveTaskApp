@@ -12,7 +12,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Preparation
 
-You need to install [node] (https://nodejs.org/en) and [git] (https://git-scm.com/) locally.
+You need to install [node](https://nodejs.org/en) and [git](https://git-scm.com/) locally.
 
 ## Getting started
 
