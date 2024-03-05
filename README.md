@@ -1,4 +1,4 @@
-# span-test
+# CognitiveTaskApp
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -10,29 +10,29 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Preparation
 
+You need to install [node] (https://nodejs.org/en) and [git] (https://git-scm.com/) locally.
 
-## NodeJs
-
-```sh
-sudo apt install nodejs
-```
-
-## Project Setup
+## Getting started
 
 ```sh
+# clone the project
+git clone https://github.com/Cognitive-Tasks/CognitiveTaskApp.git
+
+# enter the project directory
 cd CognitiveTaskApp
+
+# project Setup
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# compile and Hot-Reload for Development
 npm run dev
 ```
 
 ### Compile and Minify for Production
 
 ```sh
+#build
 npm run build
 ```
