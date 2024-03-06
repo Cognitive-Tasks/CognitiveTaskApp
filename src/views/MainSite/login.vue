@@ -1,4 +1,5 @@
 <template>
+    <main-header></main-header>
     <div class="colonna">
         <div class="formLogin">
             <p>LOGIN</p>
@@ -14,13 +15,14 @@
                         <input type="password" class="form-control" id="exampleInputPassword1">
                         <a href="">Hai dimenticato la password?</a>
                     </div>
-                    <a href="./indexAreaPersonale.html">
+                    <RouterLink to="admin/dashboard">
                         <button class="btn btn-primary" type="button">Login</button>
-                    </a>
+                    </RouterLink>
                     <br>
                     <RouterLink to="Register">Non sei registrato?</RouterLink>
                 </form>
             </div>
         </div>
     </div>
+    <main-footer></main-footer>
 </template>

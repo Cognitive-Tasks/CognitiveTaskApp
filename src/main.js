@@ -1,20 +1,23 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import routerAreaPersonale from './router/indexAreaPersonale'
-import AppAreaPersonale from './AppAreaPersonale.vue'
-import Session from './components/session.vue'
-import Ris from './components/ris.vue'
+
+import RowTableSessioni from './components/rowTableSessioni.vue'
+import RowTableRisultati from './components/rowTableRisultati.vue'
+import MainHeader from './components/mainHeader.vue'
+import MainFooter from './components/mainFooter.vue'
+import AdminHeader from './components/adminHeader.vue'
 
 const app = createApp(App)
-const appAreaPersonale = createApp(AppAreaPersonale)
 
 app.use(router)
-appAreaPersonale.use(routerAreaPersonale)
 
-appAreaPersonale.component('session', Session)
-appAreaPersonale.component('ris', Ris)
+app.component('row-table-sessioni', RowTableSessioni)
+app.component('row-table-risultati', RowTableRisultati)
+app.component('admin-header', AdminHeader)
+
+app.component('main-header', MainHeader)
+app.component('main-footer', MainFooter)
 
 
 app.mount('#app')
-appAreaPersonale.mount('#appAreaPersonale')

@@ -1,0 +1,179 @@
+/*View of AdminSite*/
+.faceAdmin {
+    position: relative;
+    width: auto;
+    top: 56px;
+    left: 180px;
+}
+
+.contenitor {
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.contenitor2 {
+    width: 80%;
+    height: 500px;
+    position: relative;
+    top: 50px;
+    left: 10%;
+}
+
+.contenitor3 {
+    border: 1px black solid;
+    width: 100%;
+    min-width: 300px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+}
+
+.progress {
+    border: 1px black solid;
+    margin: 0 10px 0 10px;
+    min-width: 340px;
+}
+
+#btnCrea {
+    margin-top: 10px;
+}
+
+#msg {
+    position: relative;
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 946px) {
+
+    .contenitor {
+        position: relative;
+        top: 50px;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        margin: 0 0 0 -480px;
+        text-align: center;
+    }
+
+    .contenitor2 {
+        max-width: 500px;
+        height: 500px;
+        position: relative;
+        top: 50px;
+        left: 50px;
+    }
+
+    .contenitor3 {
+        border: 1px black solid;
+        border-radius: 5px;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .progress {
+        border: 1px black solid;
+    }
+
+    #btnCrea {
+        margin-top: 10px;
+    }
+
+    #msg {
+        position: relative;
+    }
+}
+
+
+/*adminHeader*/
+#btnMenu {
+    background-color: transparent;
+    color: #0d6efd;
+}
+
+#menu {
+    position: fixed;
+    top: 56px;
+    height: 100%;
+    width: 180px;
+    z-index: 3;
+}
+
+#toolBar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 56px;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+}
+
+
+.imgBtn {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+#imgProfilo {
+    position: fixed;
+    top: 7px;
+    right: 5px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .imgBtn {
+    background-color: #0d6efd;
+    border-radius: 50px;
+}
+
+
+/*table*/
+.table-sortable th {
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+    content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+    content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+    background: rgba(0, 0, 0, 0.1);
+}

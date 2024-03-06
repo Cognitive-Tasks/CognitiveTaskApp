@@ -1,4 +1,5 @@
 <template>
+    <main-header></main-header>
     <h1 id="header">Contattaci</h1>
 
     <div class="catenaccio">
@@ -17,4 +18,5 @@
             mattis id, elementum quis turpis.
         </p>
     </div>
+    <main-footer></main-footer>
 </template>

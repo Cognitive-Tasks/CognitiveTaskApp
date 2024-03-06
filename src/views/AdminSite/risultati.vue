@@ -1,26 +1,29 @@
-
 import { toHandlerKey } from 'vue';
+
 <template>
-    <div class="contenitor">
-        <h3>Risultati</h3>
+    <admin-header :sel="4"></admin-header>
+    <div class="faceAdmin">
+        <div class="contenitor">
+            <h3>Risultati</h3>
 
-        <table class="table table-striped table-responsive table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th scope="col"><input class="form-check-input" name="allChk" v-on:click="select" type="checkbox" value=""
-                            id="flexCheckDefault"></th>
-                    <th scope="col">#</th>
-                    <th scope="col">Id sessione</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Test</th>
-                    <th scope="col">Download</th>
+            <table class="table table-striped table-responsive table-bordered align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col"><input class="form-check-input" name="allChk" v-on:click="select"
+                                type="checkbox" value="" id="flexCheckDefault"></th>
+                        <th scope="col">#</th>
+                        <th scope="col">Id sessione</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Test</th>
+                        <th scope="col">Download</th>
 
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <ris v-for="x in risultati" :ris-num="x.num" :ris-id="x.id" :ris-data="x.data" :ris-type="x.type" />
-            </tbody>
-        </table>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <row-table-risultati v-for="x in risultati" :ris-num="x.num" :ris-id="x.id" :ris-data="x.data" :ris-type="x.type" />
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -66,7 +69,7 @@ export default {
     },
     methods: {
         //All checkedbox
-        select() { 
+        select() {
             var ele = document.getElementsByName('chk');
             var all = document.getElementsByName('allChk');
             if (all[0].checked == true) {

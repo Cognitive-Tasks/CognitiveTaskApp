@@ -1,4 +1,5 @@
 <template>
+    <main-header></main-header>
     <h1 id="header">Task 3</h1>
 
     <div class="catenaccio">
@@ -44,4 +45,5 @@
             <button class="btn btn-primary" type="button">Prova il test</button>
         </a>
     </div>
+    <main-footer></main-footer>
 </template>

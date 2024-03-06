@@ -1,4 +1,6 @@
 <template>
+      <main-header></main-header>
+
     <h1 id="header">About</h1>
 
     <div class="catenaccio">
@@ -32,4 +34,6 @@
             justo pellentesque. Aenean non massa luctus, efficitur elit convallis, facilisis neque.
         </p>
     </div>
+
+    <main-footer></main-footer>
 </template>

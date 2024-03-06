@@ -1,4 +1,5 @@
 <template>
+    <main-header></main-header>
     <div class="colonna">
             <div class="formLogin">
                 <p>REGISTER</p>
@@ -35,4 +36,5 @@
                 </div>
             </div>
         </div>
+        <main-footer></main-footer>
 </template>
