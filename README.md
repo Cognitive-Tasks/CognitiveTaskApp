@@ -30,6 +30,23 @@ npm install
 npm run dev
 ```
 
+## Run Backend Server
+```sh
+#setup
+npm install express mongoose mongodb
+
+#insert your URI_DATABASE
+
+#run server.js
+node server.js
+```
+
+## Install vue-flatpickr Component
+```sh
+#install
+npm install vue-flatpickr-component
+```
+
 ## Compile and Minify for Production
 
 ```sh

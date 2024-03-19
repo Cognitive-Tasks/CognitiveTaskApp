@@ -45,6 +45,17 @@
     margin-left: 10px;
 }
 
+#search-input{
+    width: 200px;
+    width: 50%;
+}
+
+#filter{
+    position: relative;
+    float: right;
+    padding-bottom: 10px;
+}
+
 @media screen and (min-width: 946px) {
 
     .contenitor {

@@ -9,90 +9,40 @@
                     <tr>
                         <th scope="col"><input class="form-check-input" type="checkbox" name="allChk"
                                 v-on:click="select" value="" id="flexCheckDefault"></th>
-                        <th scope="col" v-on:click="sortOrder = 'num'"
-                            v-bind:class="{ 'th-sort-asc': sortOrder == 'num' }">#
-                        </th>
-                        <th scope="col" v-on:click="sortOrder = 'id'"
-                            v-bind:class="{ 'th-sort-asc': sortOrder == 'id' }">Id
-                            sessione</th>
-                        <th scope="col" v-on:click="sortOrder = 'data'"
-                            v-bind:class="{ 'th-sort-asc': sortOrder == 'data' }">
-                            Data</th>
-                        <th scope="col" v-on:click="sortOrder = 'type'"
-                            v-bind:class="{ 'th-sort-asc': sortOrder == 'type' }">
-                            Test</th>
-                        <th scope="col" v-on:click="sortOrder = 'state'"
-                            v-bind:class="{ 'th-sort-asc': sortOrder == 'state' }">
-                            Stato</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Id sessione</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Test</th>
+                        <th scope="col">Stato</th>
                         <th scope="col">Visualizza</th>
 
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <!--
-                <session v-for="x in sessione" :session-num="x.num" :session-id="x.id" :session-data="x.data"
-                    :session-state="x.state" :session-type="x.type">
-                </session>
--->
-                    <row-table-sessioni v-for="x in sort(sortOrder)" :session-num="x.num" :session-id="x.id" :session-data="x.data"
-                        :session-state="x.state" :session-type="x.type">
+                    <row-table-sessioni v-for="x in this.documents" :session-num="x.num" :session-id="x.id"
+                        :session-data="x.data" :session-state="x.state" :session-type="x.type">
                     </row-table-sessioni>
 
                 </tbody>
             </table>
+            <p> {{ msg }}</p>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
     data() {
         return {
+            msg: '',
             sortOrder: 'num',
-            sessione: [
-                {
-                    num: '1',
-                    id: '001',
-                    data: '24/02/2024',
-                    type: 'Type1',
-                    state: 'In corso',
-                },
-                {
-                    num: '3',
-                    id: '002',
-                    data: '21/02/2024',
-                    type: 'Type3',
-                    state: 'Finito',
-                },
-                {
-                    num: '2',
-                    id: '003',
-                    data: '12/02/2024',
-                    type: 'Type2',
-                    state: 'Non iniziato',
-                },
-                {
-                    num: '4',
-                    id: '004',
-                    data: '04/02/2024',
-                    type: 'Type3',
-                    state: 'In corso',
-                }
-            ],
+            documents: [],
         };
     },
-    computed: {
-        orderedListOptions: function () {
-            return {
-                'num': () => { return this.sessione.sort((t1, t2) => t1.num < t2.num ? -1 : 1) },
-                'id': () => { return this.sessione.sort((t1, t2) => t1.id < t2.id ? -1 : 1) },
-                'type': () => { return this.sessione.sort((t1, t2) => t1.type < t2.type ? -1 : 1) },
-                'state': () => { return this.sessione.sort((t1, t2) => t1.state < t2.state ? -1 : 1) },
-                'data': () => { return this.sessione.sort((t1, t2) => t1.data < t2.data ? -1 : 1) },
-            }
-        },
-
+    mounted() {
+        this.fetchDocuments();
     },
     methods: {
         select() {
@@ -109,8 +59,16 @@ export default {
                 }
             }
         },
-        sort: function (sortOrder) {
-            return this.orderedListOptions[sortOrder]()
+        async fetchDocuments() {
+            try {
+                const collectionName = 'Sessioni';
+                const response = await axios.get('http://localhost:3003/api/documents', { params: { collection: collectionName } });
+                this.documents = response.data;
+            } catch (error) {
+                console.error('Error fetching documents:', error);
+            }
+            if (this.documents.length == 0) this.msg = 'Error Server';
+
         },
     },
 }
