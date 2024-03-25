@@ -27,9 +27,9 @@
             amet mollis enim mattis vel. Maecenas nunc eros, fermentum in fermentum vitae, tempus a nisi. Aliquam nunc
             metus, placerat quis laoreet vitae, cursus a nulla.
         </p>
-        <a href="">
+        <RouterLink to="/test/task1">
             <button class="btn btn-primary" type="button">Prova il test</button>
-        </a>
+        </RouterLink>
     </div>
     <main-footer></main-footer>
 </template>

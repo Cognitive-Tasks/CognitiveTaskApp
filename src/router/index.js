@@ -2,10 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import mainSiteRoutes from './mainSiteRoutes'
 import adminSiteRoutes from './adminSiteRoutes'
+import testSiteRoutes from './testSiteRoutes'
 
 const routes = [
   ...mainSiteRoutes,
-  ...adminSiteRoutes
+  ...adminSiteRoutes,
+  ...testSiteRoutes
 ];
 
 const router = createRouter({
