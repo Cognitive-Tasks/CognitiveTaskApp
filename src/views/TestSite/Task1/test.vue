@@ -94,7 +94,11 @@ export default {
     beforeDestroy() {
         // Rimuovi l'ascoltatore degli eventi quando il componente viene distrutto
         window.removeEventListener('popstate', this.handlePopstateNavigation);
+    },
+    beforeRouteLeave(to, from, next) {
+        // Rimuovi l'ascoltatore dell'evento beforeunload prima di lasciare la pagina
         window.removeEventListener('beforeunload', this.handleBeforeUnload);
+        next();
     },
     created() {
         this.avviaCronometro();
